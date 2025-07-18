@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -5,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// JSON body uchun middleware
+// Middleware
 app.use(express.json());
 
 // MongoDB ulanish
@@ -18,11 +19,11 @@ mongoose.connect(process.env.MONGO_URI, {
   console.error('❌ MongoDB ulanishda xatolik:', err.message);
 });
 
-// ROUTES
+// Marshrutlar
 const userRoutes = require('./routes/userRoutes');
 app.use('/api', userRoutes);
 
-// Asosiy route
+// Root route
 app.get('/', (req, res) => {
   res.send('Salom, server ishlayapti!');
 });
