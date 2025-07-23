@@ -1,5 +1,5 @@
-import UserForm from './userFrom';
-import UserTable from './UserTable';
+import UserForm from './nav/UserForm';
+import UserTable from './nav/UserTable';
 
 function App() {
   return (

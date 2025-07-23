@@ -6,7 +6,7 @@ const UserTable = () => {
 
   useEffect(() => {
     // Foydalanuvchilarni olish
-    axios.get('https://vercel-git-main-ggggs-projects-6ab143ee.vercel.app/api/users')
+    axios.get('https://vercel-lymf.vercel.app/api/users')
       .then(res => setUsers(res.data))
       .catch(err => console.error('❌ Xatolik:', err));
   }, []);
@@ -20,16 +20,14 @@ const UserTable = () => {
             <th style={{ padding: '10px', border: '1px solid #ccc' }}>Ism</th>
             <th style={{ padding: '10px', border: '1px solid #ccc' }}>Familya</th>
             <th style={{ padding: '10px', border: '1px solid #ccc' }}>Telefon</th>
-            <th style={{ padding: '10px', border: '1px solid #ccc' }}>Tug‘ilgan sana</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user, idx) => (
             <tr key={idx}>
-              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.firstName || user.ism}</td>
-              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.lastName || user.familya}</td>
-              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.phone || user.telefon}</td>
-              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.birthDate || ''}</td>
+              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.ism}</td>
+              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.familya}</td>
+              <td style={{ padding: '8px', border: '1px solid #ccc' }}>{user.telefon}</td>
             </tr>
           ))}
         </tbody>

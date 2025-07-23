@@ -25,7 +25,7 @@ app.use('/api', userRoutes);
 
 // Root route
 app.get('/', (req, res) => {
-  res.send('Salom, server ishlayapti!');
+  res.send('Salom, server ishlayapticuchcdbchdbchdchdbc!');
 });
 
 app.listen(PORT, () => {
